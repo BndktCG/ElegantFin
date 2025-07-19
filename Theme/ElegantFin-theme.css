@@ -1,75 +1,83 @@
 /* ElegantFin Theme for Jellyfin by lscambo13 */
+/* edited by BndktCG */
 
-/* Add-ons: Uncomment to enable */
-/* @import url("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/assets/add-ons/custom-media-covers-latest-min.css"); */
-
-/* Inter Font Family */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-:root {
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');:root {
     --elegantFinFooterText: "ElegantFin v25.05.03";
     color-scheme: dark;
-    --darkerGradientPoint: #111827;
-    --darkerGradientPointAlpha: rgba(17, 24, 39, 0.85);
+    --darkerGradientPoint: hsl(0deg 0% 0%);
+    --darkerGradientPointAlpha: rgba(17,24,39,.85);
     --lighterGradientPoint: #1d2635;
-    --lighterGradientPointAlpha: rgba(29, 38, 53, 0.85);
-    --borderColor: rgb(71, 80, 92);
+    --lighterGradientPointAlpha: rgba(29,38,53,.85);
+    
     --lighterBorderColor: rgb(255 255 255 / 20%);
-    --headerColor: rgba(30, 40, 54, 0.8);
-    --drawerColor: rgba(30, 40, 54, 0.9);
-    --selectorBackgroundColor: rgb(55, 65, 81);
-    --selectorBackgroundColorAlpha: rgba(55, 65, 81, 0.5);
-    --btnDeleteColor: rgb(169, 29, 29);
-    --btnDeleteBorderColor: rgb(217, 84, 84);
-    --btnSubmitColor: rgb(61, 54, 178);
-    --btnSubmitBorderColor: rgb(117 111 226);
-    --checkboxCheckedBgColor: rgb(79, 70, 229);
-    --highlightOutlineColor: rgb(37, 99, 235);
-    --textColor: rgb(209, 213, 219);
-    --dimTextColor: rgb(156, 163, 175);
-    --activeColorAlpha: rgba(119, 91, 244, 0.9);
-    --activeColor: rgb(119, 91, 244);
+    
+    --drawerColor: rgba(30,40,54,.9);
+    --selectorBackgroundColor: rgb(55,65,81);
+    --selectorBackgroundColorAlpha: rgba(55,65,81,.5);
+    --btnDeleteColor: rgb(183, 23, 23);
+    --btnDeleteBorderColor: rgb(217,84,84);
+    --btnSubmitColor: rgb(35, 170, 182);
+    --btnSubmitBorderColor: rgb(77, 211, 245);
+    --checkboxCheckedBgColor: rgb(79,70,229);
+    --highlightOutlineColor: rgb(37,99,235);
+    --textColor: rgb(209,213,219);
+    --dimTextColor: rgb(156,163,175);
+    
+    --activeColor: rgb(121 112 160);
     --tableBodyColor: rgb(31 41 55 / 1);
     --uiAccentColor: rgb(117 111 226);
-    --btnMiniPlayColor: rgb(41 154 93);
-    --btnPlayBorderColor: color-mix(in srgb, var(--btnMiniPlayColor), rgb(255, 255, 255) 5%);
-    --backgroundGradient: linear-gradient(0deg, var(--darkerGradientPoint) 35%, var(--lighterGradientPoint));
-    --cardBackgroundGradient: linear-gradient(0deg, var(--darkerGradientPoint), var(--lighterGradientPoint) 25%);
-    --hoverGradientA: linear-gradient(130deg, rgb(255 255 255 / 35%) 20%, rgb(255 255 255 / 15%) 40%);
-    --hoverGradientB: radial-gradient(100% 250% at 90% 190%, rgba(255, 255, 255, 0.15) 85%, rgba(255, 255, 255, 0.33) 100%);
-    --shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .2);
+    --btnMiniPlayColor: rgb(41 154 152);
+
+
+    /* eigene Farben */
+    --gradientTopRight: rgb(1, 14, 38);
+    --gradientBottomLeft: rgb(34, 1, 1);
+    --headerColor: hsla(0, 0%, 87%, 0);
+    --mediaButtonsMain: hsl(218, 29%, 16%);
+    --backgroundButton:  hsla(0, 0%, 87%, 0.1);
+    --activeColorAlpha: rgba(255, 255, 255, 0.2);
+    --detailsPageblurColor: var(--headerColor);
+    --borderColor: rgba(255, 255, 255, 0.2);
+
+    
+
+
+    --btnPlayBorderColor: color-mix(in srgb,var(--btnMiniPlayColor),rgb(255,255,255) 5%);
+    --backgroundGradient: radial-gradient(ellipse at top right,var(--gradientTopRight),transparent), radial-gradient(ellipse at bottom left,var(--gradientBottomLeft),transparent );
+    
+    --cardBackgroundGradient: linear-gradient(0deg,var(--darkerGradientPoint),var(--lighterGradientPoint) 25%);
+   
+    --hoverGradientA: linear-gradient(130deg,rgb(255 255 255 / 35%) 20%,rgb(255 255 255 / 15%) 40%);
+    --hoverGradientB: radial-gradient(100% 250% at 90% 190%,rgba(255,255,255,.15) 85%,rgba(255,255,255,.33) 100%);
+    --shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);
     --largerRadius: 1.25em;
     --largeRadius: 1em;
     --smallRadius: .5em;
     --smallerRadius: .375em;
-    --borderWidth: 0.075em;
+    --borderWidth: .075em;
     --defaultBorder: var(--borderWidth) solid var(--borderColor);
     --defaultLighterBorder: var(--borderWidth) solid var(--lighterBorderColor);
-
-    /* login page customizations */
-    /* --loginPageBgUrl: url("<YOUR-JELLYFIN-SERVER-ADDRESS>/Branding/Splashscreen?format=webp&foregroundLayer=1&quality=33&width=3840&height=2160&blur=2"); */
     --loginPageBgUrl: url("");
     --loginPageText: "Sign in to continue";
-
     --blurSmallest: blur(2px);
     --blurDefault: blur(5px);
     --blurLarge: blur(10px);
     --blurLargest: blur(20px);
-
-    /* to revert to old icons, use 'Material Icons'*/
     --iconPack: 'Material Icons Round';
+
+    /* Eigene Variablen */
+    --radiusMediaButton: 100%;
+    --blurHeader: blur(40px);
 }
 
 html {
-    font-family: "Inter", serif;
+    font-family: "Inter",serif;
     font-optical-sizing: auto;
     font-weight: 425;
     font-style: normal;
-    -webkit-tap-highlight-color: transparent !important;
+    -webkit-tap-highlight-color: transparent!important;
 }
 
-/* Material Icons Round */
-/* https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200 */
 @font-face {
     font-family: 'Material Icons Round';
     font-style: normal;
@@ -78,7 +86,7 @@ html {
 }
 
 .material-icons {
-    font-family: var(--iconPack) !important;
+    font-family: var(--iconPack)!important;
     font-weight: normal;
     font-style: normal;
     display: inline-block;
@@ -92,11 +100,7 @@ html {
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: 'liga';
-    font-variation-settings:
-        'FILL' 1,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24
+    font-variation-settings: 'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24
 }
 
 .material-icons.info_outline:before {
@@ -104,7 +108,7 @@ html {
 }
 
 .dashboardFooter {
-    font-family: "Noto Sans", serif;
+    font-family: "Noto Sans",serif;
     transition: transform 50ms;
 }
 
@@ -127,20 +131,19 @@ html {
 }
 
 .card:focus .cardBox:not(.visualCardBox) .cardScalable {
-    border-color: var(--highlightOutlineColor) !important;
+    border-color: var(--highlightOutlineColor)!important;
     filter: brightness(1.125);
 }
 
-.emby-button.show-focus:focus,
-.paper-icon-button-light.show-focus:focus {
-    background-color: var(--highlightOutlineColor) !important;
+.emby-button.show-focus:focus,.paper-icon-button-light.show-focus:focus {
+    background-color: var(--highlightOutlineColor)!important;
     color: #fff;
 }
 
 .emby-tabs .emby-button.show-focus:focus {
-    outline: none !important;
+    outline: none!important;
     color: #fff;
-    background-color: var(--highlightOutlineColor) !important;
+    background-color: var(--highlightOutlineColor)!important;
 }
 
 [dir=ltr] .itemsContainer>.card>.cardBox {
@@ -149,25 +152,22 @@ html {
 }
 
 .vertical-wrap:not(.centered) {
-    justify-content: flex-start !important;
+    justify-content: flex-start!important;
 }
 
-.countIndicator,
-.fullSyncIndicator,
-.mediaSourceIndicator {
-    background: rgb(31, 80, 189);
+.countIndicator,.fullSyncIndicator,.mediaSourceIndicator {
+    background: rgb(31,80,189);
     border: var(--defaultLighterBorder);
 }
 
 .cardScalable {
     border-radius: var(--largeRadius);
-    border: var(--borderColor) solid calc(2 * var(--borderWidth)) !important;
-    overflow: hidden !important;
+    overflow: hidden!important;
     transition: transform 125ms;
 }
 
 .layout-mobile .cardScalable {
-    border: var(--defaultBorder) !important;
+    border: var(--defaultBorder)!important;
 }
 
 .cardImageContainer {
@@ -175,7 +175,7 @@ html {
 }
 
 .card.squareCard[data-type="TvChannel"] .cardImageContainer.cardContent {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255,255,255,.2);
 }
 
 .cardImageContainer>.cardDefaultText {
@@ -191,7 +191,7 @@ html {
 }
 
 .card.card-hoverable:hover .cardScalable {
-    border-color: var(--textColor) !important;
+    border-color: var(--textColor)!important;
 }
 
 .card.card-hoverable:hover .cardImageContainer {
@@ -203,8 +203,7 @@ html {
     transition: transform .125s;
 }
 
-.card.card-hoverable:hover .cardScalable,
-.card.card-hoverable:hover .itemSelectionPanel {
+.card.card-hoverable:hover .cardScalable,.card.card-hoverable:hover .itemSelectionPanel {
     transform: scale(1.02);
 }
 
@@ -219,15 +218,13 @@ html {
 
 .cardOverlayContainer {
     transition: .25s;
-    background: rgba(255, 255, 255, 0.1);
-    /* Uncomment the code below to get back the old overlay on hovering over cards*/
-    /* background: var(--hoverGradientA); */
+    background: rgba(255,255,255,.1);
     background-size: 200%;
     background-position-x: 100%;
 }
 
 .layout-desktop .card.card-hoverable:hover .cardOverlayContainer {
-    background-position-x: 0%;
+    background-position-x: 0;
 }
 
 .cardBox:not(.visualCardBox) .cardPadder {
@@ -243,18 +240,15 @@ html {
     bottom: 1.25em;
 }
 
-.cardOverlayContainer>.cardOverlayFab-primary,
-.listItemImageButton,
-.layout-mobile .cardOverlayButton-br>.cardOverlayButtonIcon {
-    background-color: var(--btnMiniPlayColor) !important;
+.cardOverlayContainer>.cardOverlayFab-primary,.listItemImageButton,.layout-mobile .cardOverlayButton-br>.cardOverlayButtonIcon {
+    background-color: var(--btnMiniPlayColor)!important;
     color: white;
     border: var(--defaultLighterBorder);
     border-color: var(--btnPlayBorderColor);
     font-size: 75%;
 }
 
-.cardOverlayContainer>.cardOverlayFab-primary:hover,
-.listItemImageButton:hover {
+.cardOverlayContainer>.cardOverlayFab-primary:hover,.listItemImageButton:hover {
     color: white;
 }
 
@@ -266,9 +260,7 @@ html {
     padding: .75em;
 }
 
-.layout-mobile .portraitCard .cardOverlayButton-br,
-.layout-mobile .backdropCard .cardOverlayButton-br,
-.layout-mobile .cardOverlayButton-br[data-action="menu"] {
+.layout-mobile .portraitCard .cardOverlayButton-br,.layout-mobile .backdropCard .cardOverlayButton-br,.layout-mobile .cardOverlayButton-br[data-action="menu"] {
     display: none;
 }
 
@@ -285,10 +277,7 @@ html {
     font-size: small;
 }
 
-.smallBackdropCard,
-.squareCard,
-.backdropCard,
-.bannerCard {
+.smallBackdropCard,.squareCard,.backdropCard,.bannerCard {
     width: 46%;
 }
 
@@ -296,102 +285,77 @@ html {
     min-width: 5em;
 }
 
-/* if the window width is equal to or more than (at minimum) 150em then the code in the query will trigger */
-/* 14 posters, 10 thumbs */
 @media (min-width: 150em) {
-
-    .portraitCard,
-    .squareCard {
-        width: 6.6% !important;
+    .portraitCard,.squareCard {
+        width:6.6%!important
     }
 
     .backdropCard {
-        width: 9.5%;
+        width: 9.5%
     }
 }
 
-/* if the window width is equal to or less than (at maximum) 150em then the code in the query will trigger */
-/* 9 posters, 7 thumbs */
 @media (max-width: 150em) {
-
-    .portraitCard,
-    .squareCard {
-        width: 10.4% !important;
+    .portraitCard,.squareCard {
+        width:10.4%!important
     }
 
     .backdropCard {
-        width: 13.6%;
+        width: 13.6%
     }
 }
 
-/* 7 posters, 6 thumbs */
 @media (max-width: 120em) {
-
-    .portraitCard,
-    .squareCard {
-        width: 13.5% !important;
+    .portraitCard,.squareCard {
+        width:13.5%!important
     }
 
     .backdropCard {
-        width: 15.8%;
+        width: 15.8%
     }
 }
 
-/* 6 posters, 5 thumbs */
 @media (max-width: 100em) {
-
-    .portraitCard,
-    .squareCard {
-        width: 15.2% !important;
+    .portraitCard,.squareCard {
+        width:15.2%!important
     }
 
     .backdropCard {
-        width: 18.4%;
+        width: 18.4%
     }
 }
 
-/* 5 posters, 4 thumbs */
 @media (max-width: 62em) {
-
-    .portraitCard,
-    .squareCard {
-        width: 17.9% !important;
+    .portraitCard,.squareCard {
+        width:17.9%!important
     }
 
     .backdropCard {
-        width: 23.3%;
+        width: 23.3%
     }
-
 }
 
-/* 4 posters, 3 thumbs */
 @media (max-width: 48.125em) {
-
-    .portraitCard,
-    .squareCard {
-        width: 22.3% !important;
+    .portraitCard,.squareCard {
+        width:22.3%!important
     }
 
     .backdropCard {
-        width: 30.7%;
+        width: 30.7%
     }
 }
 
-/* 3 posters, 2 thumbs */
 @media (max-width: 30em) {
-
-    .portraitCard,
-    .squareCard {
-        width: 28.8% !important;
+    .portraitCard,.squareCard {
+        width:28.8%!important
     }
 
-    .layout-mobile .portraitCard,
-    .layout-mobile .squareCard {
-        width: 29.8% !important;
+    .layout-mobile .portraitCard,.layout-mobile .squareCard {
+        width: 29.8%!important
     }
 
     .backdropCard {
-        width: 46%;
+        width: 46%
     }
 }
 
@@ -400,8 +364,7 @@ html {
 }
 
 .detailPageWrapperContainer {
-    padding-top: unset;
-    margin-top: unset;
+    padding-top: 1em;
 }
 
 .layout-mobile .detailPageWrapperContainer {
@@ -409,7 +372,8 @@ html {
 }
 
 .layout-desktop .detailPageWrapperContainer {
-    background: linear-gradient(0deg, var(--darkerGradientPoint) 80%, transparent);
+    background: --detailsPageblurColo;
+    backdrop-filter: blur(40px);
     min-height: calc(100vh - 13em);
 }
 
@@ -425,7 +389,7 @@ html {
 }
 
 .layout-mobile .detailPagePrimaryContainer {
-    background: linear-gradient(0deg, var(--darkerGradientPoint) 70%, transparent);
+    background: linear-gradient(0deg,var(--darkerGradientPoint) 70%,transparent);
 }
 
 .layout-desktop .detailPagePrimaryContainer {
@@ -440,15 +404,13 @@ html {
     background-color: transparent;
 }
 
-/* hides home button from the appbar/header on all layouts */
 .headerHomeButton {
     display: none;
 }
 
-/* hides sync button on home screen on phones only in portrait mode */
 @media (orientation: portrait) {
     .layout-mobile .skinHeader.noHomeButtonHeader .headerSyncButton {
-        display: none;
+        display:none
     }
 }
 
@@ -468,10 +430,10 @@ html {
 }
 
 .verticalSection.emby-scroller-container>h2.sectionTitle.sectionTitle-cards {
-    padding-top: 1.25em !important;
+    padding-top: 1.25em!important;
 }
 
-.layout-mobile :not(.sectionTitleContainer-cards)>.sectionTitle-cards {
+.layout-mobile:not(.sectionTitleContainer-cards)>.sectionTitle-cards {
     text-align: left;
 }
 
@@ -493,13 +455,12 @@ html {
     border-radius: var(--smallRadius);
     font-size: .85em;
     font-weight: 500;
-    padding-block: 0;
-}
+    padding-block:0;}
 
 .mediaInfoOfficialRating {
-    background: transparent !important;
+    background: transparent!important;
     font-size: .6em;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans',sans-serif;
     line-height: 1.5em;
     transform: translateY(-.15em);
     font-weight: 600;
@@ -507,7 +468,7 @@ html {
 }
 
 .starIcon {
-    background: linear-gradient(to right, #90cea1, #01b4e4);
+    background: linear-gradient(to right,#90cea1,#01b4e4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-left: -.125em;
@@ -524,98 +485,92 @@ html {
 }
 
 .layout-desktop .detailRibbon {
-    height: auto !important;
-    margin-top: unset !important;
+    height: auto!important;
+    margin-top: unset!important;
 }
 
 .layout-desktop .detailImageContainer .card {
-    top: unset !important;
-    width: 23vw !important;
+    top: unset!important;
+    width: 23vw!important;
 }
 
 .layout-tv .detailImageContainer .card {
-    width: 23vw !important;
+    width: 23vw!important;
 }
 
 @media (max-width: 62.5em) {
     .layout-desktop .itemBackdrop {
-        height: 7em !important;
+        height:7em!important
     }
 
     .layout-desktop .detailPageWrapperContainer {
-        min-height: calc(100vh - 7em);
+        min-height: calc(100vh - 14em)
     }
 }
 
 @media (max-width: 50em) {
     .homeLibraryButton {
-        width: 45.6% !important;
+        width:45.6%!important
     }
 }
 
 .homeLibraryButton {
-    padding-inline-start: .25em;
-    min-width: 15%;
+    padding-inline-start:.25em;min-width: 15%;
 }
 
-@media (orientation: landscape) and (min-width: 40em) {
+@media (orientation: landscape) and (min-width:40em) {
     .layout-mobile .itemBackdrop {
-        height: 40vh;
-        opacity: .10;
+        height:40vh;
+        opacity: .10
     }
 
     .layout-mobile .detailPageWrapperContainer {
         padding-top: 35vh;
-        margin-top: -47vh;
+        margin-top: -47vh
     }
 }
 
-@media (orientation: portrait) and (max-width: 40em) {
+@media (orientation: portrait) and (max-width:40em) {
     .layout-mobile .itemBackdrop {
-        height: 40vh;
+        height:40vh
     }
 
     .layout-mobile .detailPageWrapperContainer {
         padding-top: 35vh;
-        margin-top: -47vh;
+        margin-top: -47vh
     }
 
-    [data-type=Movie] .listItemImage,
-    [data-type=Series] .listItemImage {
-        display: unset;
+    [data-type=Movie] .listItemImage,[data-type=Series] .listItemImage {
+        display: unset
     }
 }
 
-@media (orientation: landscape) and (max-height: 40em) {
-
-    .overflowPortraitCard,
-    .overflowSquareCard {
-        width: 13vw;
+@media (orientation: landscape) and (max-height:40em) {
+    .overflowPortraitCard,.overflowSquareCard {
+        width:13vw
     }
 
-    .overflowBackdropCard,
-    .overflowSmallBackdropCard {
-        width: 20vw;
+    .overflowBackdropCard,.overflowSmallBackdropCard {
+        width: 20vw
     }
 
     .portraitCard {
         min-width: 2em;
         width: 8.5%;
-        max-width: 6.5em;
+        max-width: 6.5em
     }
 
     .backdropCard {
-        width: 23%;
+        width: 23%
     }
 
     .layout-mobile .detailImageContainer .card {
-        max-width: 15vw;
+        max-width: 15vw
     }
 
     .layout-mobile [dir=ltr] .infoWrapper {
-        padding-left: 25% !important;
+        padding-left: 25%!important
     }
-
 }
 
 .layout-mobile .itemBackdrop {
@@ -631,8 +586,7 @@ h2 {
     font-size: 1.25em;
 }
 
-h1,
-h2 {
+h1,h2 {
     font-weight: 600;
 }
 
@@ -644,9 +598,7 @@ h2 {
     color: var(--textColor);
 }
 
-.nowPlayingPlaylist,
-.nowPlayingContextMenu,
-html {
+.nowPlayingPlaylist,.nowPlayingContextMenu,html {
     background: var(--backgroundGradient)
 }
 
@@ -659,10 +611,10 @@ html {
     background: var(--backgroundGradient)
 }
 
-.skinHeader-blurred:not(.osdHeader),
-.appfooter {
-    background-color: var(--headerColor) !important;
-    backdrop-filter: var(--blurDefault) !important;
+.skinHeader-blurred:not(.osdHeader),.appfooter {
+    background-color: var(--headerColor)!important;
+    backdrop-filter: blur(100px)!important;
+    will-change: transform;
 }
 
 .headroom--unpinned {
@@ -670,16 +622,9 @@ html {
     transform: translateY(-3.5em);
 }
 
-.skinHeader:not(.osdHeader) {
-    border-style: solid;
-    border-width: 0 0 var(--borderWidth) 0;
-    border-color: var(--borderColor);
-    transition: all .375s ease-in-out;
-}
 
 .lyricPage {
-    padding-inline: .5em;
-}
+    padding-inline:.5em;}
 
 .lyricsLine {
     font-size: 2.5em;
@@ -690,8 +635,7 @@ html {
     transition: transform .125s;
 }
 
-.pastLyric,
-.futureLyric {
+.pastLyric,.futureLyric {
     transform: scale(.75);
     font-weight: 400;
     text-align: center;
@@ -702,26 +646,26 @@ html {
 }
 
 .buttonActive {
-    color: var(--uiAccentColor) !important;
+    color: var(--uiAccentColor)!important;
 }
 
 #divRunningTasks progress {
     width: calc(100% - 7em);
 }
 
-.itemProgressBar:not(.backgroundProgress, .playbackProgress, .transcodingProgress) {
+.itemProgressBar:not(.backgroundProgress,.playbackProgress,.transcodingProgress) {
     backdrop-filter: var(--blurLarge);
-    background-color: rgba(169, 169, 169, 0.3) !important;
-    height: 0.35em;
+    background-color: rgba(169,169,169,.3)!important;
+    height: .35em;
     overflow: hidden;
     border-radius: var(--largeRadius);
 }
 
-.layout-mobile .itemProgressBar:not(.backgroundProgress, .playbackProgress, .transcodingProgress) {
+.layout-mobile .itemProgressBar:not(.backgroundProgress,.playbackProgress,.transcodingProgress) {
     width: calc(100% - 2.5em);
 }
 
-.layout-mobile .backdropCard .itemProgressBar:not(.backgroundProgress, .playbackProgress, .transcodingProgress) {
+.layout-mobile .backdropCard .itemProgressBar:not(.backgroundProgress,.playbackProgress,.transcodingProgress) {
     width: 100%;
     width: -webkit-fill-available;
 }
@@ -740,25 +684,24 @@ html {
 }
 
 ::-moz-progress-bar {
-    background: var(--uiAccentColor) !important;
+    background: var(--uiAccentColor)!important;
     border-radius: var(--smallRadius) inherit var(--smallRadius) 0;
 }
 
 ::-webkit-progress-value {
-    background: var(--uiAccentColor) !important;
+    background: var(--uiAccentColor)!important;
     border-radius: var(--smallRadius) inherit var(--smallRadius) 0;
 }
 
-progress,
-::-webkit-progress-bar {
-    background: var(--darkerGradientPoint) !important;
-    border: var(--defaultBorder) !important;
+progress,::-webkit-progress-bar {
+    background: var(--darkerGradientPoint)!important;
+    border: var(--defaultBorder)!important;
     border-radius: var(--smallRadius);
     overflow: hidden;
 }
 
 progress+span {
-    color: var(--uiAccentColor) !important;
+    color: var(--uiAccentColor)!important;
 }
 
 .mdl-spinner__circle {
@@ -795,8 +738,8 @@ progress+span {
 }
 
 .mdl-slider::-webkit-slider-thumb {
-    width: .75em !important;
-    height: .75em !important;
+    width: .75em!important;
+    height: .75em!important;
 }
 
 .mdl-slider::-moz-range-thumb {
@@ -829,29 +772,29 @@ progress+span {
 }
 
 .button-link {
-    color: rgb(200, 200, 200);
+    color: rgb(200,200,200);
 }
 
 .button-link:hover {
-    color: unset !important;
+    color: unset!important;
     text-decoration: none;
 }
 
 .button-link:active {
-    color: rgb(243, 243, 243) !important;
+    color: rgb(243,243,243)!important;
     text-decoration: none;
 }
 
 .detailButton {
-    border-radius: var(--smallRadius);
+    border-radius: var(--radiusMediaButton);
     border: var(--defaultLighterBorder);
-    padding: .5em .5em !important;
-    margin: 0.125em !important;
+    padding: .5em .5em!important;
+    margin: .125em!important;
     backdrop-filter: var(--blurSmallest);
 }
 
 .btnPlay.detailButton {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255,255,255,.05);
     border: var(--defaultLighterBorder);
 }
 
@@ -867,7 +810,6 @@ progress+span {
     justify-content: flex-start;
 }
 
-
 .btnPlay[title="Play"]>.detailButton-content::after {
     content: "Play";
 }
@@ -882,8 +824,7 @@ progress+span {
     place-content: center;
 }
 
-.mainDrawer,
-.drawer-open {
+.mainDrawer,.drawer-open {
     background-color: var(--drawerColor);
     border-right: var(--defaultBorder);
     backdrop-filter: var(--blurLarge);
@@ -894,8 +835,8 @@ progress+span {
 }
 
 .btnHeaderSave.button-flat {
-    color: var(--uiAccentColor) !important;
-    gap: 0.3em;
+    color: var(--uiAccentColor)!important;
+    gap: .3em;
     border-radius: var(--smallRadius);
 }
 
@@ -905,11 +846,11 @@ progress+span {
 
 .button-flat:active {
     color: unset;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255,255,255,.2);
 }
 
 .playstatebutton-icon-played {
-    color: rgb(34, 197, 94);
+    color: rgb(34,197,94);
 }
 
 .itemDetailsGroup {
@@ -920,11 +861,11 @@ progress+span {
     border-radius: var(--smallRadius);
 }
 
-@supports(display:revert) {
+@supports(display: revert) {
     .itemDetailsGroup {
-        outline: var(--defaultBorder);
+        outline:var(--defaultBorder);
         outline-offset: calc(-1*var(--borderWidth));
-        border: none;
+        border: none
     }
 }
 
@@ -933,9 +874,9 @@ progress+span {
 }
 
 .detailsGroupItem {
-    margin: 0 !important;
+    margin: 0!important;
     justify-content: space-between;
-    padding: 0.5em 0.9em;
+    padding: .5em .9em;
     align-items: baseline;
 }
 
@@ -975,55 +916,47 @@ progress+span {
 }
 
 .layout-mobile .itemExternalLinks.focuscontainer-x>.button-link:hover:not(:active) {
-    color: var(--textColor) !important;
+    color: var(--textColor)!important;
 }
 
-.layout-desktop .itemExternalLinks.focuscontainer-x>a:hover,
-.itemExternalLinks.focuscontainer-x>a:active {
-    background-color: var(--activeColor) !important;
-    color: white !important;
+.layout-desktop .itemExternalLinks.focuscontainer-x>a:hover,.itemExternalLinks.focuscontainer-x>a:active {
+    background-color: var(--activeColor)!important;
+    color: white!important;
 }
 
-.layout-desktop .itemExternalLinks.focuscontainer-x>a[href*="themoviedb.org"]:hover,
-.itemExternalLinks.focuscontainer-x>a[href*="themoviedb.org"]:active {
-    background-color: rgb(26, 183, 216) !important;
-    color: black !important;
+.layout-desktop .itemExternalLinks.focuscontainer-x>a[href*="themoviedb.org"]:hover,.itemExternalLinks.focuscontainer-x>a[href*="themoviedb.org"]:active {
+    background-color: rgb(26,183,216)!important;
+    color: black!important;
 }
 
-.layout-desktop .itemExternalLinks.focuscontainer-x>a[href*="imdb.com"]:hover,
-.itemExternalLinks.focuscontainer-x>a[href*="imdb.com"]:active {
-    background-color: rgb(226, 182, 22) !important;
-    color: black !important;
+.layout-desktop .itemExternalLinks.focuscontainer-x>a[href*="imdb.com"]:hover,.itemExternalLinks.focuscontainer-x>a[href*="imdb.com"]:active {
+    background-color: rgb(226,182,22)!important;
+    color: black!important;
 }
 
-.layout-desktop .itemExternalLinks.focuscontainer-x>a[href*="thetvdb.com"]:hover,
-.itemExternalLinks.focuscontainer-x>a[href*="thetvdb.com"]:active {
-    background-color: rgb(108, 213, 145) !important;
-    color: black !important;
+.layout-desktop .itemExternalLinks.focuscontainer-x>a[href*="thetvdb.com"]:hover,.itemExternalLinks.focuscontainer-x>a[href*="thetvdb.com"]:active {
+    background-color: rgb(108,213,145)!important;
+    color: black!important;
 }
 
-.layout-desktop .itemExternalLinks.focuscontainer-x>a[href*="trakt.tv"]:hover,
-.itemExternalLinks.focuscontainer-x>a[href*="trakt.tv"]:active {
-    background-color: rgb(171, 58, 173) !important;
-    color: var(--textColor) !important;
+.layout-desktop .itemExternalLinks.focuscontainer-x>a[href*="trakt.tv"]:hover,.itemExternalLinks.focuscontainer-x>a[href*="trakt.tv"]:active {
+    background-color: rgb(171,58,173)!important;
+    color: var(--textColor)!important;
 }
 
-.layout-desktop .itemExternalLinks.focuscontainer-x>a[href*="theaudiodb.com"]:hover,
-.itemExternalLinks.focuscontainer-x>a[href*="theaudiodb.com"]:active {
-    background-color: rgb(99, 153, 204) !important;
-    color: rgb(15, 22, 28) !important;
+.layout-desktop .itemExternalLinks.focuscontainer-x>a[href*="theaudiodb.com"]:hover,.itemExternalLinks.focuscontainer-x>a[href*="theaudiodb.com"]:active {
+    background-color: rgb(99,153,204)!important;
+    color: rgb(15,22,28)!important;
 }
 
-.layout-desktop .itemExternalLinks.focuscontainer-x>a[href*="musicbrainz.org"]:hover,
-.itemExternalLinks.focuscontainer-x>a[href*="musicbrainz.org"]:active {
-    background-color: rgb(186, 71, 143) !important;
-    color: var(--textColor) !important;
+.layout-desktop .itemExternalLinks.focuscontainer-x>a[href*="musicbrainz.org"]:hover,.itemExternalLinks.focuscontainer-x>a[href*="musicbrainz.org"]:active {
+    background-color: rgb(186,71,143)!important;
+    color: var(--textColor)!important;
 }
 
-.itemTags,
-.itemTags>a {
+.itemTags,.itemTags>a {
     display: none;
-    font-size: unset !important;
+    font-size: unset!important;
     font-weight: 200;
 }
 
@@ -1033,14 +966,13 @@ progress+span {
 }
 
 .itemMiscInfo {
-    align-items: flex-end !important;
+    align-items: flex-end!important;
 }
 
-.innerCardFooter,
-.chapterThumbTextContainer {
-    background: linear-gradient(0deg, #000000e8, transparent);
+.innerCardFooter,.chapterThumbTextContainer {
+    background: linear-gradient(0deg,#000000e8,transparent);
     font-weight: 500;
-    text-shadow: .1em .1em 0px black;
+    text-shadow: .1em .1em 0 black;
     padding: 5em 2em 1.5em 2em;
     width: auto;
     width: -webkit-fill-available;
@@ -1057,25 +989,20 @@ progress+span {
 }
 
 .dialog:not(.dialog-fullscreen) {
-    border-radius: var(--largeRadius) !important;
+    border-radius: var(--largeRadius)!important;
     border: var(--defaultBorder);
 }
 
-@media (max-width: 80em),
-(max-height: 45em) {
-
-    .dialog.dialog-fixedSize,
-    .dialog.dialog-fullscreen-lowres {
-        border-radius: unset !important;
-        border: unset;
+@media (max-width: 80em),(max-height:45em) {
+    .dialog.dialog-fixedSize,.dialog.dialog-fullscreen-lowres {
+        border-radius:unset!important;
+        border: unset
     }
 
-    body:has(.dialog.dialog-fixedSize.opened,
-        .dialog.dialog-fullscreen-lowres.opened) {
-        overflow: hidden;
+    body:has(.dialog.dialog-fixedSize.opened,.dialog.dialog-fullscreen-lowres.opened) {
+        overflow: hidden
     }
 }
-
 
 .dialogBackdropOpened {
     opacity: .66;
@@ -1085,15 +1012,13 @@ progress+span {
     top: -1.75em;
 }
 
-.subtitleEditor-dropZone,
-.imageEditor-dropZone {
+.subtitleEditor-dropZone,.imageEditor-dropZone {
     border-radius: var(--largeRadius);
 }
 
 .formDialogHeaderTitle {
-    margin-inline: 0 !important;
-    text-align: center;
-    padding: 0 0.5em !important;
+    margin-inline:0!important;text-align: center;
+    padding: 0 .5em!important;
 }
 
 .formDialogFooter:not(.formDialogFooter-clear.formDialogFooter-flex)>.formDialogFooterItem {
@@ -1102,8 +1027,8 @@ progress+span {
 }
 
 .collapseContent {
-    background-color: unset !important;
-    backdrop-filter: unset !important;
+    background-color: unset!important;
+    backdrop-filter: unset!important;
 }
 
 .selectionCommandsPanel {
@@ -1122,8 +1047,8 @@ progress+span {
 }
 
 .emby-checkbox:checked+span+.checkboxOutline {
-    border-radius: var(--smallerRadius) !important;
-    box-shadow: inset 0em 7em 10em 20px rgba(0, 0, 0, 0.8);
+    border-radius: var(--smallerRadius)!important;
+    box-shadow: inset 0 7em 10em 20px rgba(0,0,0,.8);
     background: transparent;
     border-color: white;
     border-style: solid;
@@ -1131,9 +1056,9 @@ progress+span {
     outline: none;
 }
 
-@supports(display:revert) {
+@supports(display: revert) {
     .emby-checkbox:checked+span+.checkboxOutline {
-        outline: solid var(--borderWidth) white;
+        outline:solid var(--borderWidth) white
     }
 }
 
@@ -1143,7 +1068,6 @@ progress+span {
     width: 1.3em;
     border-radius: var(--smallerRadius);
 }
-
 
 .itemSelectionPanel .material-icons.check:before {
     font-size: 4em;
@@ -1156,15 +1080,14 @@ progress+span {
 }
 
 div[data-isfolder="true"] .cardText-first+.itemSelectionPanel>.checkboxContainer {
-    height: calc(100% - 0em);
+    height: calc(100% - 0);
 }
 
 .checkboxContainer .emby-checkbox:checked+span+.checkboxOutline.multiSelectCheckboxOutline {
-    border-radius: var(--largeRadius) !important;
+    border-radius: var(--largeRadius)!important;
 }
 
-.cardText-secondary+.itemSelectionPanel>.checkboxContainer,
-.cardText.cardTextCentered:not(.cardText-secondary, .cardText-first)+.itemSelectionPanel>.checkboxContainer {
+.cardText-secondary+.itemSelectionPanel>.checkboxContainer,.cardText.cardTextCentered:not(.cardText-secondary,.cardText-first)+.itemSelectionPanel>.checkboxContainer {
     height: calc(100% - 3em);
 }
 
@@ -1173,7 +1096,7 @@ div[data-isfolder="true"] .cardText-first+.itemSelectionPanel>.checkboxContainer
 }
 
 .cardScalable+.itemSelectionPanel>.checkboxContainer {
-    height: calc(100% - 0em);
+    height: calc(100% - 0);
 }
 
 .checkboxOutline.multiSelectCheckboxOutline {
@@ -1200,24 +1123,24 @@ div[data-isfolder="true"] .cardText-first+.itemSelectionPanel>.checkboxContainer
 }
 
 .emby-checkbox:focus:not(:checked)+span+.checkboxOutline {
-    border-color: var(--highlightOutlineColor) !important;
+    border-color: var(--highlightOutlineColor)!important;
     outline: none;
 }
 
 .emby-checkbox:focus+span+.checkboxOutline {
-    border-color: var(--highlightOutlineColor) !important;
+    border-color: var(--highlightOutlineColor)!important;
     outline: none;
 }
 
-@supports(display:revert) {
+@supports(display: revert) {
     .emby-checkbox:focus:not(:checked)+span+.checkboxOutline {
-        outline: var(--borderWidth) solid gray;
-        outline-offset: calc(-2.5*var(--borderWidth));
+        outline:var(--borderWidth) solid gray;
+        outline-offset: calc(-2.5*var(--borderWidth))
     }
 
     .emby-checkbox:focus+span+.checkboxOutline {
-        border-color: white !important;
-        outline: var(--borderWidth) solid var(--highlightOutlineColor);
+        border-color: white!important;
+        outline: var(--borderWidth) solid var(--highlightOutlineColor)
     }
 }
 
@@ -1250,7 +1173,7 @@ div[data-isfolder="true"] .cardText-first+.itemSelectionPanel>.checkboxContainer
 }
 
 .playedIndicator {
-    background: rgb(34, 197, 94);
+    background: rgb(34,197,94);
     border: var(--defaultLighterBorder);
 }
 
@@ -1262,8 +1185,7 @@ div[data-isfolder="true"] .cardText-first+.itemSelectionPanel>.checkboxContainer
     font-size: .75em;
 }
 
-.videoIndicator:has(.photo_album),
-.videoIndicator:has(.folder) {
+.videoIndicator:has(.photo_album),.videoIndicator:has(.folder) {
     background: peru;
 }
 
@@ -1275,8 +1197,7 @@ div[data-isfolder="true"] .cardText-first+.itemSelectionPanel>.checkboxContainer
     background: indianred;
 }
 
-.defaultCardBackground,
-.cardScalable {
+.defaultCardBackground,.cardScalable {
     background: var(--cardBackgroundGradient);
 }
 
@@ -1294,20 +1215,16 @@ div[data-type="PhotoAlbum"] .play_arrow:before {
 }
 
 .card-withuserdata[data-isfolder="true"] .cardImageContainer.defaultCardBackground {
-    filter: contrast(0.85);
-    background-size: cover !important;
-    background-position: 50% !important;
+    filter: contrast(.85);
+    background-size: cover!important;
+    background-position: 50%!important;
     background-blend-mode: multiply;
 }
 
-.emby-button.block,
-.button-alt,
-.raised,
-#btnDeleteImage,
-.dashboardActionsContainer>.emby-button {
+.emby-button.block,.button-alt,.raised,#btnDeleteImage,.dashboardActionsContainer>.emby-button {
     color: #fff;
-    border-radius: var(--smallRadius);
-    background: var(--lighterGradientPoint);
+    border-radius: .5em;
+    background: var(--backgroundButton);
     border: var(--defaultBorder);
 }
 
@@ -1317,8 +1234,7 @@ div[data-type="PhotoAlbum"] .play_arrow:before {
 }
 
 .btnBrowse>.folder {
-    margin-inline-end: .5em;
-}
+    margin-inline-end:.5em;}
 
 .fab {
     color: #fff;
@@ -1327,7 +1243,7 @@ div[data-type="PhotoAlbum"] .play_arrow:before {
 }
 
 .fab:focus {
-    background: var(--lighterGradientPoint) !important;
+    background: var(--lighterGradientPoint)!important;
     filter: brightness(1.35);
 }
 
@@ -1336,54 +1252,45 @@ div[data-type="PhotoAlbum"] .play_arrow:before {
     filter: brightness(1.35);
 }
 
-.raised:active,
-.fab:active,
-.emby-button:active {
-    filter: brightness(1.2) !important;
+.raised:active,.fab:active,.emby-button:active {
+    filter: brightness(1.2)!important;
 }
 
 .localnav>.emby-button {
-    background: var(--lighterGradientPoint) !important;
+    background: var(--lighterGradientPoint)!important;
     color: #fff;
     padding: .8em .8em;
 }
 
 div[data-role=controlgroup] a.ui-btn-active {
-    background: var(--selectorBackgroundColor) !important;
-    color: #fff !important;
+    background: var(--selectorBackgroundColor)!important;
+    color: #fff!important;
 }
 
-.guide-date-tab-button.emby-tab-button-active,
-.guide-date-tab-button:focus {
+.guide-date-tab-button.emby-tab-button-active,.guide-date-tab-button:focus {
     color: white;
 }
 
-#btnDeleteImage,
-.button-delete,
-.btnRevoke,
-#btnShutdown {
+#btnDeleteImage,.button-delete,.btnRevoke,#btnShutdown {
     background: var(--btnDeleteColor);
     border: solid var(--btnDeleteBorderColor) var(--borderWidth);
 }
 
 .button-submit {
-    background: var(--btnSubmitColor) !important;
-    border: solid var(--btnSubmitBorderColor) var(--borderWidth) !important;
+    background: var(--btnSubmitColor)!important;
+    border: solid var(--btnSubmitBorderColor) var(--borderWidth)!important;
 }
 
-.collapseContent,
-.formDialogFooter:not(.formDialogFooter-clear),
-.formDialogHeader:not(.formDialogHeader-clear) {
+.collapseContent,.formDialogFooter:not(.formDialogFooter-clear),.formDialogHeader:not(.formDialogHeader-clear) {
     background-color: var(--headerColor);
     backdrop-filter: var(--blurDefault);
 }
 
-.visualCardBox,
-.paperList {
-    background-color: var(--headerColor) !important;
-    border-radius: var(--largeRadius) !important;
-    border: var(--defaultBorder) !important;
-    box-shadow: unset !important;
+.visualCardBox,.paperList {
+    background-color: var(--headerColor)!important;
+    border-radius: var(--largeRadius)!important;
+    border: var(--defaultBorder)!important;
+    box-shadow: unset!important;
 }
 
 .paperList {
@@ -1406,24 +1313,21 @@ div[data-role=controlgroup] a.ui-btn-active {
 }
 
 .listItemIcon:not(.listItemIcon-transparent) {
-    background-color: var(--lighterGradientPoint) !important;
+    background-color: var(--lighterGradientPoint)!important;
 }
 
 .listItemIcon.notification_important {
-    background-color: var(--btnDeleteColor) !important;
+    background-color: var(--btnDeleteColor)!important;
     border: solid var(--btnDeleteBorderColor) var(--borderWidth);
 }
 
-.listItemIcon.notifications:not(.listItemIcon-transparent),
-.listItemIcon.schedule:not(.listItemIcon-transparent),
-.listItemIcon.person:not(.listItemIcon-transparent),
-.listItemIcon.live_tv:not(.listItemIcon-transparent) {
-    background-color: rgb(41, 49, 83) !important;
+.listItemIcon.notifications:not(.listItemIcon-transparent),.listItemIcon.schedule:not(.listItemIcon-transparent),.listItemIcon.person:not(.listItemIcon-transparent),.listItemIcon.live_tv:not(.listItemIcon-transparent) {
+    background-color: rgb(41,49,83)!important;
     border: var(--defaultBorder);
 }
 
 .readOnlyContent {
-    flex-direction: column !important;
+    flex-direction: column!important;
 }
 
 .MuiAppBar-root {
@@ -1439,20 +1343,19 @@ div[data-role=controlgroup] a.ui-btn-active {
 }
 
 .MuiDrawer-paper:first-child {
-    margin-block-start: .25em;
-}
+    margin-block-start:.25em;}
 
 .listItemImage {
     border-radius: var(--smallRadius);
-    margin-right: .75em !important;
+    margin-right: .75em!important;
     border: var(--defaultBorder);
 }
 
-[dir=ltr] .listItem:not(.actionSheetMenuItem, .childrenItemsContainer .listItem, .activityLogListWidget .listItem) {
-    padding: 0.375em !important;
+[dir=ltr] .listItem:not(.actionSheetMenuItem,.childrenItemsContainer .listItem,.activityLogListWidget .listItem) {
+    padding: .375em!important;
 }
 
-[dir=ltr] .listItem:not(.actionSheetMenuItem, .childrenItemsContainer .listItem, .activityLogListWidget .listItem):not(:last-child) {
+[dir=ltr] .listItem:not(.actionSheetMenuItem,.childrenItemsContainer .listItem,.activityLogListWidget .listItem):not(:last-child) {
     margin-bottom: .5em;
 }
 
@@ -1462,8 +1365,7 @@ div[data-role=controlgroup] a.ui-btn-active {
 }
 
 .listItem[data-type="Audio"] {
-    margin-inline: 1em;
-}
+    margin-inline:1em;}
 
 .listItem[data-type="Audio"]:has(.playlistIndexIndicatorImage) .listItemBodyText {
     color: white;
@@ -1490,19 +1392,16 @@ div[data-role=controlgroup] a.ui-btn-active {
     overflow: hidden;
 }
 
-.listItem-bottomoverview,
-[dir="ltr"] .listItem:not(.actionSheetMenuItem)[data-type="Episode"] .listItem-overview p {
+.listItem-bottomoverview,[dir="ltr"] .listItem:not(.actionSheetMenuItem)[data-type="Episode"] .listItem-overview p {
     margin-top: .75em;
-    margin-bottom: 0em;
+    margin-bottom: 0;
 }
 
-.listItem,
-.navMenuOption {
+.listItem,.navMenuOption {
     border-radius: .7em;
 }
 
-.listItem:hover,
-.navMenuOption:hover {
+.listItem:hover,.navMenuOption:hover {
     background: unset;
     border-radius: .7em;
 }
@@ -1511,34 +1410,29 @@ div[data-role=controlgroup] a.ui-btn-active {
     background: var(--highlightOutlineColor);
 }
 
-.listItem:active,
-.navMenuOption:active {
-    background: rgba(255, 255, 255, 0.125);
+.listItem:active,.navMenuOption:active {
+    background: rgba(255,255,255,.125);
 }
 
 .listItem-border {
-    border-color: transparent !important;
+    border-color: transparent!important;
 }
 
 .listItem-border.emby-button.show-focus:focus {
     border-radius: var(--smallRadius);
 }
 
-.MuiListItem-root>a,
-.MuiList-root>a,
-.MuiListItem-root>div {
+.MuiListItem-root>a,.MuiList-root>a,.MuiListItem-root>div {
     border: solid transparent var(--borderWidth);
     border-radius: .7em;
-    margin-inline: .5em !important;
-    margin-block: .25em !important;
-}
+    margin-inline:.5em!important;margin-block:.25em!important;}
 
 .Mui-selected {
-    background-color: var(--activeColor) !important;
+    background-color: var(--activeColor)!important;
 }
 
 .actionSheetContent {
-    padding: .4em !important;
+    padding: .4em!important;
 }
 
 .actionSheetContent>h1 {
@@ -1546,7 +1440,7 @@ div[data-role=controlgroup] a.ui-btn-active {
 }
 
 [dir=ltr] .actionsheetMenuItemIcon.check {
-    margin: 0 .45em 0 .45em !important;
+    margin: 0 .45em 0 .45em!important;
 }
 
 .actionSheetMenuItem.emby-button:has(.listItemIcon.material-icons.check) {
@@ -1566,32 +1460,31 @@ div[data-role=controlgroup] a.ui-btn-active {
 }
 
 .actionSheetMenuItem.emby-button:has(.listItemIcon.material-icons.check[style*="hidden"]):active {
-    background-color: rgba(255, 255, 255, 0.125);
+    background-color: rgba(255,255,255,.125);
 }
 
 .navMenuOption {
-    border-radius: var(--smallRadius) !important;
-    margin: 0em 1em !important;
+    border-radius: var(--smallRadius)!important;
+    margin: 0 1em!important;
 }
 
 [dir=ltr] .navMenuOption {
-    padding: 0.75em 1em !important;
+    padding: .75em 1em!important;
     margin-bottom: unset;
 }
 
 #myPreferencesMenuPage .listItemIcon {
-    margin-inline: .5em .25em;
-}
+    margin-inline:.5em .25em;}
 
 .navMenuOption-selected {
-    background-color: var(--activeColor) !important;
+    background-color: var(--activeColor)!important;
 }
 
 .detailSection {
     display: flex;
     flex-direction: column;
     gap: 1em;
-    max-width: unset !important;
+    max-width: unset!important;
 }
 
 .detailPageContent {
@@ -1600,17 +1493,16 @@ div[data-role=controlgroup] a.ui-btn-active {
 
 .trackSelections {
     order: 2;
-    max-width: unset !important;
+    max-width: unset!important;
 }
 
-.detailsGroupItem,
-.trackSelections .selectContainer {
-    max-width: unset !important;
+.detailsGroupItem,.trackSelections .selectContainer {
+    max-width: unset!important;
     align-items: center;
 }
 
 .selectArrowContainer {
-    top: 0em;
+    top: 0;
     opacity: .5;
 }
 
@@ -1658,11 +1550,11 @@ div[data-role=controlgroup] a.ui-btn-active {
 .alphaPickerButton {
     font-family: monospace;
     margin: .15em;
-    color: rgba(255, 255, 255, 0.25);
+    color: rgba(255,255,255,.25);
 }
 
 .alphaPickerButton-selected {
-    color: rgba(255, 255, 255, 1);
+    color: rgba(255,255,255,1);
 }
 
 .alphaPicker-vertical {
@@ -1678,26 +1570,24 @@ div[data-role=controlgroup] a.ui-btn-active {
 }
 
 [dir=ltr] .padded-left.vertical-wrap:not(div:has(.homeLibraryButton)) {
-    padding-left: 5% !important;
+    padding-left: 5%!important;
 }
 
 [dir=ltr] .padded-right.vertical-wrap:not(div:has(.homeLibraryButton)) {
-    padding-right: 5% !important;
+    padding-right: 5%!important;
 }
 
 .paging {
-    padding-inline: 1em;
-}
+    padding-inline:1em;}
 
 .layout-mobile #myPreferencesMenuPage {
-    padding-top: 3.75em !important;
+    padding-top: 3.75em!important;
 }
 
 .headerUserButton {
     width: 2em;
     height: 2em;
-    margin-inline-end: 1em;
-    border: var(--defaultBorder);
+    margin-inline-end:1em;border: var(--defaultBorder);
 }
 
 .MuiAvatar-circular {
@@ -1720,29 +1610,26 @@ div[data-role=controlgroup] a.ui-btn-active {
 }
 
 .jstree-default .jstree-wholerow-clicked {
-    background: var(--selectorBackgroundColor) !important;
+    background: var(--selectorBackgroundColor)!important;
 }
 
 .sectionTitleTextButton {
-    padding-inline: .5em;
-}
+    padding-inline:.5em;}
 
 .sectionTitleTextButton:hover {
-    background: transparent !important;
+    background: transparent!important;
 }
 
 .sectionTitleTextButton:active {
-    color: white !important;
+    color: white!important;
 }
 
 .sectionTitleTextButton>* {
-    padding: .3em 0 !important;
-    margin: 0 0 !important;
+    padding: .3em 0!important;
+    margin: 0 0!important;
 }
 
-.dashboardSection .sectionTitleTextButton>.material-icons,
-.sectionTitleTextButton>.material-icons,
-.dashboardSection .sectionTitleTextButton>.material-icons.material-icons {
+.dashboardSection .sectionTitleTextButton>.material-icons,.sectionTitleTextButton>.material-icons,.dashboardSection .sectionTitleTextButton>.material-icons.material-icons {
     font-size: unset;
 }
 
@@ -1751,12 +1638,11 @@ div[data-role=controlgroup] a.ui-btn-active {
 }
 
 .sectionTitleTextButton>.material-icons.chevron_right {
-    margin-left: .5rem !important;
+    margin-left: .5rem!important;
     height: 1.5rem;
     width: 1.5rem;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23D1D5DB' aria-hidden='true'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center center;
-    background-size: contain;
-    /* Stops miscalculating the size on hover effect */
+    background-size: contain
 }
 
 .toast {
@@ -1803,84 +1689,76 @@ div[data-role=controlgroup] a.ui-btn-active {
 }
 
 .skip-button:active {
-    background-color: rgba(245, 245, 245, 0.7);
+    background-color: rgba(245,245,245,.7);
     box-shadow: none;
 }
 
-.toast,
-.upNextContainer {
-    background: var(--headerColor) !important;
-    border: var(--defaultBorder) !important;
+.toast,.upNextContainer {
+    background: var(--headerColor)!important;
+    border: var(--defaultBorder)!important;
     backdrop-filter: var(--blurDefault);
 }
 
 .activeSession {
-    width: 98% !important;
+    width: 98%!important;
 }
 
 .emby-tab-button:hover {
     color: whitesmoke;
-
 }
 
-@media (hover: hover) and (pointer: fine) {
-    .paper-icon-button-light:hover:not(:disabled, .cardOverlayButton) {
-        color: #fff;
-        background-color: rgb(255 255 255 / 5%);
+@media (hover: hover) and (pointer:fine) {
+    .paper-icon-button-light:hover:not(:disabled,.cardOverlayButton) {
+        color:#fff;
+        background-color: rgb(255 255 255 / 5%)
     }
 
     .actionSheetMenuItem.emby-button:has(.listItemIcon.material-icons.check[style*="hidden"]):hover {
-        background-color: rgba(255, 255, 255, 0.125);
+        background-color: rgba(255,255,255,.125)
     }
 
-    .emby-select-withcolor:hover:not(.emby-select[disabled], :focus),
-    .emby-input:hover:not(:focus),
-    .emby-textarea:hover:not(:focus) {
-        border-color: var(--dimTextColor) !important;
+    .emby-select-withcolor:hover:not(.emby-select[disabled],:focus),.emby-input:hover:not(:focus),.emby-textarea:hover:not(:focus) {
+        border-color: var(--dimTextColor)!important
     }
 
     .checkboxContainer:hover .checkboxOutline:not(.multiSelectCheckboxOutline) {
         border-color: var(--checkboxCheckedBgColor);
-        border-width: calc(2 * var(--borderWidth));
+        border-width: calc(2 * var(--borderWidth))
     }
 
-    .raised:hover,
-    .fab:hover,
-    .emby-button:hover {
-        filter: brightness(1.2) !important;
+    .raised:hover,.fab:hover,.emby-button:hover {
+        filter: brightness(1.2)!important
     }
 
     .button-flat:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-        color: white;
+        background-color: rgba(255,255,255,.2);
+        color: white
     }
 
     .alphaPickerButton:hover {
-        color: rgba(255, 255, 255, 1);
+        color: rgba(255,255,255,1)
     }
 
-    .listItem:hover,
-    .navMenuOption:hover {
-        background: rgba(255, 255, 255, 0.125);
+    .listItem:hover,.navMenuOption:hover {
+        background: rgba(255,255,255,.125)
     }
 
-    .searchfields-icon:hover,
-    .inputContainer .emby-input-iconbutton:hover {
-        color: rgba(255, 255, 255, 0.8);
+    .searchfields-icon:hover,.inputContainer .emby-input-iconbutton:hover {
+        color: rgba(255,255,255,.8)
     }
 
     #scenesContent .cardScalable:hover {
-        border-color: var(--dimTextColor) !important;
+        border-color: var(--dimTextColor)!important
     }
 
     .sectionTitleTextButton:hover {
-        background: transparent !important;
-        color: white !important;
+        background: transparent!important;
+        color: white!important
     }
 
     .button-link:hover {
-        color: rgb(243, 243, 243) !important;
-        text-decoration: none;
+        color: rgb(243,243,243)!important;
+        text-decoration: none
     }
 }
 
@@ -1893,36 +1771,26 @@ div[data-role=controlgroup] a.ui-btn-active {
     font-family: consolas;
 }
 
-.emby-select-withcolor,
-.emby-select,
-.emby-input,
-.emby-textarea {
+.emby-select-withcolor,.emby-select,.emby-input,.emby-textarea {
     background-color: var(--selectorBackgroundColor);
     border: var(--defaultLighterBorder);
     border-radius: var(--smallRadius);
-    padding: .5em !important;
+    padding: .5em!important;
 }
 
-.inputLabelFocused,
-.selectLabelFocused,
-.textareaLabelFocused {
+.inputLabelFocused,.selectLabelFocused,.textareaLabelFocused {
     color: #fff;
 }
 
-.emby-select-withcolor:focus,
-.emby-input:focus,
-.emby-textarea:focus {
-    border-color: var(--highlightOutlineColor) !important;
-    outline: none !important;
+.emby-select-withcolor:focus,.emby-input:focus,.emby-textarea:focus {
+    border-color: var(--highlightOutlineColor)!important;
+    outline: none!important;
 }
 
-@supports (display:revert) {
-
-    .emby-select-withcolor:focus,
-    .emby-input:focus,
-    .emby-textarea:focus {
-        border-color: var(--highlightOutlineColor) !important;
-        outline: thin solid var(--highlightOutlineColor) !important;
+@supports (display: revert) {
+    .emby-select-withcolor:focus,.emby-input:focus,.emby-textarea:focus {
+        border-color:var(--highlightOutlineColor)!important;
+        outline: thin solid var(--highlightOutlineColor)!important
     }
 }
 
@@ -1932,13 +1800,13 @@ div[data-role=controlgroup] a.ui-btn-active {
 }
 
 .inputContainer .emby-input-iconbutton {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255,255,255,.5);
     margin-left: -2.5em;
-    background-color: transparent !important;
+    background-color: transparent!important;
 }
 
 .searchfields-txtSearch {
-    padding: .75em 1.5em !important;
+    padding: .75em 1.5em!important;
     border-radius: 4em;
 }
 
@@ -1947,12 +1815,11 @@ div[data-role=controlgroup] a.ui-btn-active {
     margin-left: -1.75em;
     margin-bottom: 0;
     border-radius: var(--largeRadius);
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255,255,255,.5);
 }
 
-.searchfields-icon:active,
-.inputContainer .emby-input-iconbutton:active {
-    color: rgba(255, 255, 255, 0.8);
+.searchfields-icon:active,.inputContainer .emby-input-iconbutton:active {
+    color: rgba(255,255,255,.8);
 }
 
 .searchFields>.searchFieldsInner {
@@ -1972,16 +1839,14 @@ div[data-role=controlgroup] a.ui-btn-active {
     font-size: 1.6em;
 }
 
-#liveTvSuggestedPage,
-.liveTvContainer {
+#liveTvSuggestedPage,.liveTvContainer {
     background-color: var(--tableBodyColor);
 }
 
 .programCell-active {
-    background-color: var(--activeColor) !important;
+    background-color: var(--activeColor)!important;
     border-radius: .5em;
-    margin-block: .5em !important;
-}
+    margin-block:.5em!important;}
 
 .guideVerticalScroller {
     padding: 0;
@@ -1996,24 +1861,21 @@ div[data-role=controlgroup] a.ui-btn-active {
 }
 
 .channelPrograms>.programCell:nth-child(even) {
-    /* background-color: #11182700; */
 }
 
-.guide-channelHeaderCell:focus,
-.programCell:focus {
-    background-color: var(--highlightOutlineColor) !important;
+.guide-channelHeaderCell:focus,.programCell:focus {
+    background-color: var(--highlightOutlineColor)!important;
 }
 
 .emby-select-iconbutton {
     background-color: var(--selectorBackgroundColor);
     border: var(--defaultLighterBorder);
     border-radius: var(--smallRadius);
-    margin-inline-start: 1em;
-}
+    margin-inline-start:1em;}
 
 @media (min-width: 62em) {
     .sectionTabs:not(.layout-tv .sectionTabs) {
-        -webkit-align-items: center;
+        -webkit-align-items:center;
         align-items: center;
         -webkit-align-self: center;
         align-self: center;
@@ -2021,11 +1883,11 @@ div[data-role=controlgroup] a.ui-btn-active {
         justify-content: center;
         margin-top: -4.3em;
         position: relative;
-        width: auto;
+        width: auto
     }
 
     .libraryPage:not(.noSecondaryNavPage):not(.layout-tv .libraryPage) {
-        padding-top: 4.8em !important;
+        padding-top: 4.8em!important
     }
 }
 
@@ -2041,9 +1903,9 @@ div[data-role=controlgroup] a.ui-btn-active {
 .infoBanner {
     display: flex;
     place-content: center;
-    background-color: var(--headerColor) !important;
-    border-radius: var(--largeRadius) !important;
-    border: var(--defaultBorder) !important;
+    background-color: var(--headerColor)!important;
+    border-radius: var(--largeRadius)!important;
+    border: var(--defaultBorder)!important;
 }
 
 .sliderBubbleText {
@@ -2056,7 +1918,7 @@ fieldset {
 }
 
 table:not(.MuiTable-root.MuiTable-stickyHeader) {
-    border-color: var(--borderColor) !important;
+    border-color: var(--borderColor)!important;
     border-radius: var(--smallRadius);
     border-spacing: 1px;
     border: var(--defaultBorder);
@@ -2070,40 +1932,33 @@ table:not(.MuiTable-root.MuiTable-stickyHeader) {
 }
 
 #serverActivityPage .MuiPaper-elevation2 {
-    border: var(--defaultBorder) !important;
-    box-shadow: unset !important;
+    border: var(--defaultBorder)!important;
+    box-shadow: unset!important;
 }
 
-#serverActivityPage .MuiPaper-elevation2,
-#serverActivityPage .MuiPaper-elevation2>.MuiBox-root,
-#serverActivityPage .MuiTableRow-root.MuiTableRow-head {
+#serverActivityPage .MuiPaper-elevation2,#serverActivityPage .MuiPaper-elevation2>.MuiBox-root,#serverActivityPage .MuiTableRow-root.MuiTableRow-head {
     background-color: var(--tableBodyColor);
 }
 
-.detailTableBodyRow-shaded:nth-child(odd),
-#serverActivityPage .MuiTableBody-root .MuiTableRow-root:nth-child(odd) {
-    background: var(--darkerGradientPointAlpha) !important;
+.detailTableBodyRow-shaded:nth-child(odd),#serverActivityPage .MuiTableBody-root .MuiTableRow-root:nth-child(odd) {
+    background: var(--darkerGradientPointAlpha)!important;
 }
 
-.detailTableBodyRow-shaded:nth-child(even),
-#serverActivityPage .MuiTableBody-root .MuiTableRow-root:nth-child(even) {
-    background: var(--lighterGradientPointAlpha) !important;
+.detailTableBodyRow-shaded:nth-child(even),#serverActivityPage .MuiTableBody-root .MuiTableRow-root:nth-child(even) {
+    background: var(--lighterGradientPointAlpha)!important;
 }
-
 
 .MuiList-root.MuiMenu-list {
     background-color: var(--drawerColor);
 }
 
 ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
-    /* ! Don't change these units. They are rem because that is standard for MUI */
-    gap: 0.5rem;
+    gap: .5rem;
 }
 
-.playerStats,
-.iconOsd {
+.playerStats,.iconOsd {
     border-radius: var(--largeRadius);
-    background-color: rgba(69, 69, 69, 0.69);
+    background-color: rgba(69,69,69,.69);
     backdrop-filter: var(--blurDefault);
 }
 
@@ -2111,11 +1966,11 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
     max-height: 50vh;
     flex-wrap: wrap;
     overflow-x: auto;
-    padding: 1em !important;
+    padding: 1em!important;
 }
 
 #scenesContent .cardScalable:active {
-    border-color: var(--dimTextColor) !important;
+    border-color: var(--dimTextColor)!important;
 }
 
 .progressring-spiner {
@@ -2133,7 +1988,7 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
     min-height: 100vh;
     padding: 1em;
     overflow-y: auto;
-    background: linear-gradient(to bottom, var(--darkerGradientPointAlpha), var(--lighterGradientPoint)), var(--loginPageBgUrl);
+    background: linear-gradient(to bottom,var(--darkerGradientPointAlpha),var(--lighterGradientPoint)),var(--loginPageBgUrl);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -2142,16 +1997,15 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
 
 #loginPage .padded-left.padded-right.padded-bottom-page {
     width: 28em;
-    background: rgba(30, 40, 54, 0.7);
-    padding: 2em 2em 1em 2em !important;
+    background: rgba(30,40,54,.7);
+    padding: 2em 2em 1em 2em!important;
     border-radius: var(--largerRadius);
     backdrop-filter: var(--blurDefault);
     box-sizing: border-box;
     transform: translateY(3em);
 }
 
-.manualLoginForm .sectionTitle,
-.visualLoginForm>h1 {
+.manualLoginForm .sectionTitle,.visualLoginForm>h1 {
     display: none;
 }
 
@@ -2160,15 +2014,14 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
 }
 
 #divUsers .squareCard {
-    width: 30% !important;
+    width: 30%!important;
 }
 
 .layout-mobile #divUsers .squareCard {
-    width: 45% !important;
+    width: 45%!important;
 }
 
-.manualLoginForm::before,
-.visualLoginForm::before {
+.manualLoginForm::before,.visualLoginForm::before {
     content: var(--loginPageText);
     position: relative;
     display: block;
@@ -2180,8 +2033,7 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
     text-align: center;
 }
 
-.manualLoginForm,
-.visualLoginForm {
+.manualLoginForm,.visualLoginForm {
     position: relative;
 }
 
@@ -2196,36 +2048,29 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
     resize: none;
 }
 
-.startTimeText,
-.endTimeText,
-.positionTime,
-.runtime {
+.startTimeText,.endTimeText,.positionTime,.runtime {
     width: 4.5em;
     box-sizing: border-box;
 }
 
 .startTimeText {
-    margin: 0 !important;
+    margin: 0!important;
 }
 
 .endTimeText {
     justify-content: right;
-    padding-inline-end: .8em;
-}
+    padding-inline-end:.8em;}
 
-.startTimeText,
-.endTimeText {
+.startTimeText,.endTimeText {
     padding-top: .25em;
 }
 
-.startTimeText,
-.positionTime {
+.startTimeText,.positionTime {
     text-align: start;
     justify-content: left;
 }
 
-.endTimeText,
-.runtime {
+.endTimeText,.runtime {
     text-align: end;
     justify-content: right;
 }
@@ -2234,11 +2079,11 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
     background: var(--activeColor);
 }
 
-#indexPage:not(.hide) .card-withuserdata[data-isfolder="true"]:not([data-type="PhotoAlbum"], [data-type="Series"], [data-type="Folder"], [data-type="Season"], [data-type="Playlist"]) .cardPadder-overflowBackdrop {
+#indexPage:not(.hide) .card-withuserdata[data-isfolder="true"]:not([data-type="PhotoAlbum"],[data-type="Series"],[data-type="Folder"],[data-type="Season"],[data-type="Playlist"]) .cardPadder-overflowBackdrop {
     padding-bottom: 50%;
 }
 
-.card-withuserdata[data-isfolder="true"]:not([data-type="PhotoAlbum"], [data-type="Series"], [data-type="Folder"], [data-type="Season"], [data-type="Playlist"]) .cardImageContainer.cardContent::before {
+.card-withuserdata[data-isfolder="true"]:not([data-type="PhotoAlbum"],[data-type="Series"],[data-type="Folder"],[data-type="Season"],[data-type="Playlist"]) .cardImageContainer.cardContent::before {
     position: absolute;
     font-size: 3.5vh;
     margin-bottom: .175em;
@@ -2248,19 +2093,9 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
     text-align: center;
 }
 
-#indexPage:not(.hide) .card-withuserdata[data-isfolder="true"]:not([data-type="PhotoAlbum"], [data-type="Series"], [data-type="Folder"], [data-type="Season"], [data-type="Playlist"]) .cardText-first,
-#indexPage:not(.hide) .card-withuserdata[data-isfolder="true"]:not([data-type="PhotoAlbum"], [data-type="Series"], [data-type="Folder"], [data-type="Season"], [data-type="Playlist"]) .cardText.cardTextCentered {
+#indexPage:not(.hide) .card-withuserdata[data-isfolder="true"]:not([data-type="PhotoAlbum"],[data-type="Series"],[data-type="Folder"],[data-type="Season"],[data-type="Playlist"]) .cardText-first,#indexPage:not(.hide) .card-withuserdata[data-isfolder="true"]:not([data-type="PhotoAlbum"],[data-type="Series"],[data-type="Folder"],[data-type="Season"],[data-type="Playlist"]) .cardText.cardTextCentered {
     display: none;
 }
-
-/* input[type="radio"]:checked {
-    background-color: var(--highlightOutlineColor);
-} */
-
-/* .mdl-radio__focus-circle {
-    color: red;
-    background: var(--highlightOutlineColor);
-} */
 
 .nowPlayingButtonsContainer {
     margin-top: 1em;
@@ -2273,16 +2108,16 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
 }
 
 .nowPlayingPageImageContainerNoAlbum .defaultCardBackground {
-    background: repeating-radial-gradient(black, transparent 10em);
+    background: repeating-radial-gradient(black,transparent 10em);
 }
 
 .nowPlayingPageImageContainerNoAlbum .cardImageContainer .cardImageIcon {
     color: var(--borderColor);
 }
 
-@media (orientation: portrait) and (max-width: 43em) {
+@media (orientation: portrait) and (max-width:43em) {
     .nowPlayingPageImageContainerNoAlbum .cardImageContainer .cardImageIcon {
-        font-size: 8em !important;
+        font-size:8em!important
     }
 }
 
@@ -2290,7 +2125,7 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
     padding: 2em 0;
     top: 3.5em;
     bottom: 4.3em;
-    background: color-mix(in srgb, var(--headerColor), var(--darkerGradientPoint) 50%);
+    background: color-mix(in srgb,var(--headerColor),var(--darkerGradientPoint) 50%);
     backdrop-filter: var(--blurLargest);
     z-index: 0;
 }
@@ -2324,7 +2159,7 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
 }
 
 .layout-desktop .nowPlayingInfoControls {
-    margin: 0em 2em;
+    margin: 0 2em;
 }
 
 .nowPlayingPageImage {
@@ -2332,9 +2167,9 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
     border-radius: var(--smallRadius);
 }
 
-@media (orientation: portrait) and (max-width: 43em) {
+@media (orientation: portrait) and (max-width:43em) {
     .nowPlayingInfoContainer {
-        height: calc(95% - 4.2em);
+        height:calc(95% - 4.2em)
     }
 }
 
@@ -2356,7 +2191,7 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
 .playlistIndexIndicatorImage {
     background-blend-mode: difference;
     background-color: var(--textColor);
-    background-size: contain !important;
+    background-size: contain!important;
 }
 
 .playlistIndexIndicatorImage.defaultCardBackground .audiotrack {
@@ -2364,7 +2199,7 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
 }
 
 #dialogToc {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0,0,0,.5);
     max-height: unset;
     max-width: unset;
 }
@@ -2374,7 +2209,7 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
     font-weight: 600;
     list-style-type: circle;
     margin-bottom: .5em;
-    font-family: "Math", serif;
+    font-family: "Math",serif;
 }
 
 .MuiTabs-indicator {
@@ -2393,7 +2228,7 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
 
 .MuiTabs-flexContainer>.MuiButtonBase-root.Mui-selected {
     color: white;
-    background-color: transparent !important;
+    background-color: transparent!important;
 }
 
 .MuiToggleButtonGroup-grouped.Mui-selected {
@@ -2407,4 +2242,24 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
 
 #viewPanel .ui-panel-inner {
     margin-top: 4em;
+}
+
+/* Eigenes CSS */
+
+.backdropImageFadeIn {
+    animation:ease-in;
+}
+
+a.raised.homeLibraryButton.emby-button{
+    border: none;
+}
+
+button.headerButton.headerButtonRight.headerUserButton.paper-icon-button-light{
+    border: none;
+}
+
+
+button.detailButton.emby-button{
+    border: none;
+    background-color: rgba(255, 255, 255, 0.12);
 }
