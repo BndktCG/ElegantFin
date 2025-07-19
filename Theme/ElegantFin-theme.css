@@ -24,7 +24,7 @@
     --textColor: rgb(209,213,219);
     --dimTextColor: rgb(156,163,175);
     
-    --activeColor: rgb(121 112 160);
+    
     --tableBodyColor: rgb(31 41 55 / 1);
     --uiAccentColor: rgb(117 111 226);
     --btnMiniPlayColor: rgb(41 154 152);
@@ -42,6 +42,7 @@
     --drawerColor: hsla(0, 0%, 100%, .1);
 
     --selectorBackgroundColor: rgba(255, 255, 255, 0.05);
+    --activeColor: rgba(255, 255, 255, 0.2);
 
     
     --btnPlayBorderColor: color-mix(in srgb,var(--btnMiniPlayColor),rgb(255,255,255) 5%);
