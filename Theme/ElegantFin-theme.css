@@ -1,6 +1,7 @@
 /* ElegantFin Theme for Jellyfin by lscambo13 */
 /* edited by BndktCG */
 
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');:root {
     --elegantFinFooterText: "ElegantFin v25.05.03";
     color-scheme: dark;
@@ -11,8 +12,8 @@
     
     --lighterBorderColor: rgb(255 255 255 / 20%);
     
-    --drawerColor: rgba(30,40,54,.9);
-    --selectorBackgroundColor: rgb(55,65,81);
+    
+    
     --selectorBackgroundColorAlpha: rgba(55,65,81,.5);
     --btnDeleteColor: rgb(183, 23, 23);
     --btnDeleteBorderColor: rgb(217,84,84);
@@ -30,18 +31,19 @@
 
 
     /* eigene Farben */
-    --gradientTopRight: rgb(1, 14, 38);
-    --gradientBottomLeft: rgb(34, 1, 1);
-    --headerColor: hsla(0, 0%, 87%, 0);
+    --gradientTopRight: rgb(0, 26, 35);
+    --gradientBottomLeft: rgb(39, 0, 14);
+    --headerColor: hsla(0, 0%, 100%, 0.05);
     --mediaButtonsMain: hsl(218, 29%, 16%);
-    --backgroundButton:  hsla(0, 0%, 87%, 0.1);
+    --backgroundButton:  hsla(0, 0%, 87%, 0.05);
     --activeColorAlpha: rgba(255, 255, 255, 0.2);
     --detailsPageblurColor: var(--headerColor);
     --borderColor: rgba(255, 255, 255, 0.2);
+    --drawerColor: hsla(0, 0%, 100%, .1);
+
+    --selectorBackgroundColor: rgba(255, 255, 255, 0.05);
 
     
-
-
     --btnPlayBorderColor: color-mix(in srgb,var(--btnMiniPlayColor),rgb(255,255,255) 5%);
     --backgroundGradient: radial-gradient(ellipse at top right,var(--gradientTopRight),transparent), radial-gradient(ellipse at bottom left,var(--gradientBottomLeft),transparent );
     
@@ -613,7 +615,7 @@ h1,h2 {
 
 .skinHeader-blurred:not(.osdHeader),.appfooter {
     background-color: var(--headerColor)!important;
-    backdrop-filter: blur(100px)!important;
+    backdrop-filter: blur(40px)!important;
     will-change: transform;
 }
 
@@ -826,8 +828,7 @@ progress+span {
 
 .mainDrawer,.drawer-open {
     background-color: var(--drawerColor);
-    border-right: var(--defaultBorder);
-    backdrop-filter: var(--blurLarge);
+    backdrop-filter: blur(80px);
 }
 
 .mainDrawer-scrollContainer {
