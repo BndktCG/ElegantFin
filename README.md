@@ -45,7 +45,7 @@ https://github.com/user-attachments/assets/7a492f89-9c82-4038-a07a-a9a59e4f8eef
 
 <b>Paste the following in Custom CSS code box:</b>
 
-	@import url("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/ElegantFin-jellyfin-theme-build-latest-minified.css");
+	@import url("https://cdn.jsdelivr.net/gh/bndktcg/ElegantFin@main/Theme/ElegantFin-theme.css");
 
 <details>
   <summary><i>Detailed steps for server-side implementation</i></summary>
